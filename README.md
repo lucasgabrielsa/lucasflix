@@ -2,6 +2,8 @@
 
 React Immersion Course from Alura, learning React creating LucasFlix, based on the Nextflix Design
 
+Live on: [https://lucasflix-mocha.vercel.app/](Lucas Flix), check right now!!
+
 ## Available Scripts
 
 In the project directory, you can run:
