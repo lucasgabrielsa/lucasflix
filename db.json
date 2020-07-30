@@ -11,6 +11,12 @@
             "nome": "Back End",
             "descricao": "Uma categoria muito boa",
             "cor": "#cbd1ff"
+        },
+        {
+            "id": 3,
+            "nome": "Dev Ops",
+            "descricao": "Uma categoria muito boa",
+            "cor": "#cbd1ff"
         }
     ]
 }
