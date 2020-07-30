@@ -5,6 +5,7 @@ import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
   const valoresIniciais = {
+    id: 0,
     nome: '',
     descricao: '',
     cor: '',
@@ -32,7 +33,7 @@ function CadastroCategoria() {
   };
 
   const fetchCategories = () => {
-    fetch(URL).then((response) => response.json()).then((data) => setCategorias(data));
+    fetch(URL).then(async (response) => response.json()).then((data) => setCategorias(data));
   };
 
   useEffect(() => {
@@ -67,7 +68,9 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria) => (
-          <li key={categoria.id}>{categoria.nome}</li>
+          <li key={categoria.id}>
+            {categoria.nome}
+          </li>
         ))}
       </ul>
 
