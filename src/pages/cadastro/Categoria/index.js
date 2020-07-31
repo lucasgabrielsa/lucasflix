@@ -71,6 +71,10 @@ function CadastroCategoria() {
       </ul>
 
       <br />
+      <Link to="/cadastro/video">
+        Ir para o Cadastro de Video
+      </Link>
+      <br />
       <Link to="/">
         Ir para o Home
       </Link>

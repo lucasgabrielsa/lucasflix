@@ -1,36 +1,54 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "titulo": "Front End",
-            "descricao": "Uma categoria bacanudassa",
-            "cor": "#cbd1ff"
-        },
-        {
-            "id": 2,
-            "titulo": "Back End",
-            "descricao": "Uma categoria muito boa",
-            "cor": "#cbd1ff"
-        },
-        {
-            "id": 3,
-            "titulo": "Dev Ops",
-            "descricao": "Uma categoria muito boa",
-            "cor": "#cbd1ff"
-        }
-    ],
-    "videos": [
-        {
-            "id": 1,
-            "categoriaId": 1,
-            "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-            "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
-        },
-        {
-            "id": 2,
-            "categoriaId": 1,
-            "titulo": "SEO com React",
-            "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
-        }
-    ]
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Front End",
+      "descricao": "Uma categoria bacanudassa",
+      "cor": "#cbd1ff"
+    },
+    {
+      "id": 2,
+      "titulo": "Back End",
+      "descricao": "Uma categoria muito boa",
+      "cor": "#cbd1ff"
+    },
+    {
+      "id": 3,
+      "titulo": "Dev Ops",
+      "descricao": "Uma categoria muito boa",
+      "cor": "#cbd1ff"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "id": 3,
+      "categoriaId": 2,
+      "titulo": "Seja um Programador Back-End de Sucesso (dicas que gostaríamos ter recebido) // Vlog #98",
+      "url": "https://www.youtube.com/watch?v=TJ90DZjYdWI"
+    },
+    {
+      "id": 4,
+      "categoriaId": 3,
+      "titulo": "ntendendo Devops para Iniciantes em Programação (Parte 1) | Série Começando aos 40",
+      "url": "https://www.youtube.com/watch?v=bwO8EZf0gLI"
+    },
+    {
+      "id": 5,
+      "titulo": "",
+      "url": "",
+      "categoria": ""
+    }
+  ]
 }
