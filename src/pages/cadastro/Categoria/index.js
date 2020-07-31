@@ -2,26 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import useForm from '../../../hooks/useForm';
+import categoriesRepository from '../../../repositories/categories';
 
 function CadastroCategoria() {
   const valoresIniciais = {
     id: 0,
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
 
-  const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
-  const URL = 'http://localhost:3001/categorias';
+  const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+  const [categorias, setCategorias] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,11 +23,13 @@ function CadastroCategoria() {
       ...categorias,
       values,
     ]);
-    setValues(valoresIniciais);
+    clearForm(valoresIniciais);
   };
 
   const fetchCategories = () => {
-    fetch(URL).then(async (response) => response.json()).then((data) => setCategorias(data));
+    categoriesRepository.getAllWithVideos().then((data) => {
+      setCategorias(data);
+    });
   };
 
   useEffect(() => {
@@ -48,7 +44,7 @@ function CadastroCategoria() {
       </div>
 
       <form onSubmit={handleSubmit} style={{ flexDirection: 'row', textAlign: 'center' }}>
-        <FormField type="text" label="Categoria" name="nome" value={values.nome} onChange={handleChange} />
+        <FormField type="text" label="Categoria" name="titulo" value={values.titulo} onChange={handleChange} />
 
         <FormField type="textarea" label="Descrição" name="descricao" value={values.descricao} onChange={handleChange} />
 
@@ -69,7 +65,7 @@ function CadastroCategoria() {
       <ul>
         {categorias.map((categoria) => (
           <li key={categoria.id}>
-            {categoria.nome}
+            {categoria.titulo}
           </li>
         ))}
       </ul>

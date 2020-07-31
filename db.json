@@ -2,21 +2,35 @@
     "categorias": [
         {
             "id": 1,
-            "nome": "Front End",
+            "titulo": "Front End",
             "descricao": "Uma categoria bacanudassa",
             "cor": "#cbd1ff"
         },
         {
             "id": 2,
-            "nome": "Back End",
+            "titulo": "Back End",
             "descricao": "Uma categoria muito boa",
             "cor": "#cbd1ff"
         },
         {
             "id": 3,
-            "nome": "Dev Ops",
+            "titulo": "Dev Ops",
             "descricao": "Uma categoria muito boa",
             "cor": "#cbd1ff"
+        }
+    ],
+    "videos": [
+        {
+            "id": 1,
+            "categoriaId": 1,
+            "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+            "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+        },
+        {
+            "id": 2,
+            "categoriaId": 1,
+            "titulo": "SEO com React",
+            "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
         }
     ]
 }
