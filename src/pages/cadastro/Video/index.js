@@ -15,25 +15,29 @@ function CadastroVideo() {
     categoria: '',
   };
 
-  const { handleChange, values, clearForm } = useForm(valoresIniciais);
+  const { handleChange, values } = useForm(valoresIniciais);
 
-  const [videos, setVideos] = useState([]);
+  const [videos] = useState([]);
   const [categorias, setCategorias] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    videosRepository.createVideo(values).then(() => {
-      setVideos([
-        ...videos,
-        values,
-      ]);
-      clearForm(valoresIniciais);
+
+    const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === values.categoria);
+    const video = {
+      titulo: values.titulo,
+      url: values.url,
+      categoriaId: categoriaEscolhida.id,
+    };
+
+    videosRepository.createVideo(video).then(() => {
+      // Cadastrado com sucesso
       history.push('/');
     });
   };
 
   const fetchCategories = () => {
-    categoriesRepository.getAllWithVideos().then((data) => {
+    categoriesRepository.getAllCategories().then((data) => {
       setCategorias(data);
     });
   };
@@ -55,6 +59,8 @@ function CadastroVideo() {
         <FormField type="text" label="URL" name="url" value={values.url} onChange={handleChange} />
 
         <FormField type="select" label="Categoria" name="categoria" value={values.categoria} onChange={handleChange} />
+
+        {JSON.stringify(categorias)}
 
         <button type="submit">
           Cadastrar
