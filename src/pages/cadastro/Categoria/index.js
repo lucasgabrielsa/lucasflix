@@ -26,14 +26,10 @@ function CadastroCategoria() {
     clearForm(valoresIniciais);
   };
 
-  const fetchCategories = () => {
-    categoriesRepository.getAllWithVideos().then((data) => {
+  useEffect(() => {
+    categoriesRepository.getAllCategories().then((data) => {
       setCategorias(data);
     });
-  };
-
-  useEffect(() => {
-    fetchCategories();
   }, []);
 
   return (

@@ -19,6 +19,7 @@ function CadastroVideo() {
 
   const [videos] = useState([]);
   const [categorias, setCategorias] = useState([]);
+  const categoriasTitles = categorias.map(({ titulo }) => titulo);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,14 +37,10 @@ function CadastroVideo() {
     });
   };
 
-  const fetchCategories = () => {
+  useEffect(() => {
     categoriesRepository.getAllCategories().then((data) => {
       setCategorias(data);
     });
-  };
-
-  useEffect(() => {
-    fetchCategories();
   }, []);
 
   return (
@@ -58,9 +55,9 @@ function CadastroVideo() {
 
         <FormField type="text" label="URL" name="url" value={values.url} onChange={handleChange} />
 
-        <FormField type="select" label="Categoria" name="categoria" value={values.categoria} onChange={handleChange} />
+        <FormField type="text" label="Categoria" suggestions={categoriasTitles} name="categoria" value={values.categoria} onChange={handleChange} />
 
-        {JSON.stringify(categorias)}
+        {/* {JSON.stringify(categorias)} */}
 
         <button type="submit">
           Cadastrar
